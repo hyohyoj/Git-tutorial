@@ -140,3 +140,20 @@ git checkout -b <branch>
 ```
 git branch -d <branchname>
 ```
+
+## 커밋 메시지 수정
+> 가장 최근 commit 메시지 수정
+```
+git commit --amend -m "수정할 커밋 메시지"
+```
+또는
+```
+git commit --amend
+```
+vi 터미널에서 메시지 수정 후 wq로 저장
+> 리모트에 이미 push 했을 경우
+위의 방법으로 local에서 commit 메시지를 변경한 후
+```
+git push --force 브랜치 이름
+```
+강제로 원격에 다시 덮어쓰는 방법 (권장되는 방법은 아님 협업 중엔X)
