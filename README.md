@@ -157,3 +157,26 @@ vi 터미널에서 메시지 수정 후 wq로 저장
 git push --force 브랜치 이름
 ```
 강제로 원격에 다시 덮어쓰는 방법 (권장되는 방법은 아님 협업 중엔X)
+
+## 잔디밭 살리기
+> 깃허브 이메일과 local 환경 이메일이 동일한지 확인
+```
+git config --list
+git config user.email "내 이메일 주소"
+git config --global user.email "내 이메일 주소"
+```
+> 이미 커밋한 부분 잔디 밭에 심어주기
+```
+git rebase -i --root
+```
+변경하고 싶은 커밋 맨 앞을 pick -> edit으로 변경
+```
+git commit --amend --author="이름 <이메일주소>"
+git rebase --continue
+```
+전부 rebase 했을 경우 강제 원격 push
+```
+git push -f origin main
+git push origin +main
+```
+
