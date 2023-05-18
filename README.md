@@ -180,3 +180,14 @@ git push -f origin main
 git push origin +main
 ```
 
+## 저장소별 계정 설정
+> 전체 설정
+```
+git config --global user.name ""
+git config --global user.email ""
+```
+> 로컬 설정
+```
+git config --local user.name ""
+git config --local user.email ""
+```
